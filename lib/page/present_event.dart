@@ -10,10 +10,12 @@ class Present extends StatefulWidget {
   State<Present> createState() => _PresentState();
 }
 
-class _PresentState extends State<Present> {
-    final Color red = HexColor("#AA3A38");
+class _PresentState extends State<Present> with TickerProviderStateMixin {
+  final Color red = HexColor("#AA3A38");
   final Color green = HexColor("#2F7336");
+  late AnimationController controller;
 
+  // animate () => myAnimation.forward();
 
   AudioPlayer audioPlayer = AudioPlayer();
   late AudioCache audioCache;
@@ -28,6 +30,11 @@ class _PresentState extends State<Present> {
   void initState() {
     super.initState();
 
+    controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 1000),
+    );
+
     audioCache = AudioCache(fixedPlayer: audioPlayer);
     audioPlayer.onPlayerStateChanged.listen((event) {
       setState(() {});
@@ -36,6 +43,7 @@ class _PresentState extends State<Present> {
 
   @override
   void dispose() {
+    controller.dispose();
     super.dispose();
     audioPlayer.release();
     audioPlayer.dispose();
@@ -59,7 +67,11 @@ class _PresentState extends State<Present> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(MyApp.title, style: GoogleFonts.playfairDisplay(fontSize: 30, fontWeight: FontWeight.bold),),
+        title: Text(
+          MyApp.title,
+          style: GoogleFonts.playfairDisplay(
+              fontSize: 30, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -98,29 +110,35 @@ class _PresentState extends State<Present> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                          icon: isPlaying == true
-                              ? Icon(
-                                  Icons.pause,
-                                  color: Colors.white,
-                                )
-                              : Icon(
-                                  Icons.play_arrow_sharp,
-                                  color: Colors.white,
-                                ),
-                          iconSize: 50,
-                          onPressed: () {
-                            if (isPlaying == false) {
-                              playMusic();
-                              setState(() {
-                                isPlaying = true;
-                              });
-                            } else if (isPlaying == true) {
-                              PauseMusic();
-                              setState(() {
-                                isPlaying = false;
-                              });
-                            }
-                          },
+                          // icon: isPlaying == true
+                          //     ?  AnimatedIcon(
+                          //         icon: AnimatedIcons.play_pause,
+                          //         progress: controller,
+                          //       )
+                          //     : AnimatedIcon(
+                          //         icon: AnimatedIcons.pause_play,
+                          //         progress: controller,
+                          //       ),
+                          icon: AnimatedIcon(
+                            icon: AnimatedIcons.play_pause,
+                            progress: controller,
+                            color: Colors.white,
+                          ),
+                          iconSize: 100,
+                          onPressed: toggleIcon,
+                          //() {
+                          //   if (isPlaying == false) {
+                          //     playMusic();
+                          //     setState(() {
+                          //       isPlaying = true;
+                          //     });
+                          //   } else if (isPlaying == true) {
+                          //     PauseMusic();
+                          //     setState(() {
+                          //       isPlaying = false;
+                          //     });
+                          //   }
+                          // },
                         )
                       ],
                     ),
@@ -133,7 +151,10 @@ class _PresentState extends State<Present> {
                     ),
                     child: Text(
                       'Vào đây Đăng Ký nha',
-                      style: GoogleFonts.playfairDisplay(color: Colors.black, fontSize: 20,),
+                      style: GoogleFonts.playfairDisplay(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
                     ),
                     onPressed: () {
                       Navigator.push(
@@ -146,7 +167,7 @@ class _PresentState extends State<Present> {
                                   Widget child) {
                                 animation = CurvedAnimation(
                                     parent: animation,
-                                    curve: Curves.bounceInOut);
+                                    curve: Curves.easeInOutQuart);
 
                                 return ScaleTransition(
                                   alignment: Alignment.center,
@@ -163,10 +184,7 @@ class _PresentState extends State<Present> {
                                   Animation<double> animation,
                                   Animation<double> secAnimation) {
                                 return CreateSheetsPage();
-                                
-                              }
-                              )
-                              );
+                              }));
                     },
                   ),
                 ],
@@ -177,4 +195,10 @@ class _PresentState extends State<Present> {
       ),
     );
   }
+
+  void toggleIcon() => setState(() {
+        isPlaying = !isPlaying;
+        isPlaying ? controller.forward() : controller.reverse();
+        isPlaying ? playMusic() : PauseMusic();
+      });
 }

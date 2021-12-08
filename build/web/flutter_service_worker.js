@@ -3,23 +3,33 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "99bc5835f5a2e96422b7665f70d9aaa2",
+  "assets/AssetManifest.json": "36f635d5c0ad9d2c6c1e957c6680075c",
+"assets/assets/fev.png": "c6fb331cb29f291ad4e51579c0ffb201",
 "assets/assets/xmas.jpg": "79671c5289fe3b32f1d73c174e19e72e",
 "assets/assets/xmas.mp3": "9446e646465c6e6128d170fcfa44adcb",
 "assets/assets/xmas2.jpg": "f2cffc3dfd87962218c274a7db500005",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
 "assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
-"assets/NOTICES": "41080d424fb5bfa443c4bfbc9952d467",
+"assets/NOTICES": "ce0c71ec1025f949776fe73d37cf1736",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "a2c28ce34bb7d2ce6712bdcf67ff4698",
-"/": "a2c28ce34bb7d2ce6712bdcf67ff4698",
-"main.dart.js": "a6f867f3aaeea860b6ebf4df7999118d",
+"index.html": "b45fd9ae1bf28fa9ef76e018b596b756",
+"/": "b45fd9ae1bf28fa9ef76e018b596b756",
+"main.dart.js": "0fe6ffc274f591f664c7239dee052204",
 "manifest.json": "4b043f735891dc2244190c33ef76d45b",
+"splash/img/dark-1x.png": "b03da892a8f92bcaf58ee60f310bf417",
+"splash/img/dark-2x.png": "32dc700e5fe2823fe816f49238cea982",
+"splash/img/dark-3x.png": "768671d91db6e077d66eed52de0348d9",
+"splash/img/dark-4x.png": "3dc766b87d0d9b846e8597e60c752273",
+"splash/img/light-1x.png": "b03da892a8f92bcaf58ee60f310bf417",
+"splash/img/light-2x.png": "32dc700e5fe2823fe816f49238cea982",
+"splash/img/light-3x.png": "768671d91db6e077d66eed52de0348d9",
+"splash/img/light-4x.png": "3dc766b87d0d9b846e8597e60c752273",
+"splash/style.css": "64227ec06c71fef909f75868ada72c30",
 "version.json": "f091611810b21088991c753938133ed7"
 };
 

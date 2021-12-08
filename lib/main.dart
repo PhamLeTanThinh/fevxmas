@@ -2,6 +2,7 @@ import 'package:christmas_form/api/sheets/user_sheets_api.dart';
 import 'package:christmas_form/page/audio_play.dart';
 import 'package:christmas_form/page/create_sheets_page.dart';
 import 'package:christmas_form/page/present_event.dart';
+import 'package:christmas_form/page/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 Future main() async{
@@ -13,7 +14,7 @@ Future main() async{
 }
 
 class MyApp extends StatelessWidget {
-  static final String title = 'ĐÓN GIÁNG SINH CÙNG NHÀ VÊ';
+  static final String title = 'NHÀ VÊ CHÚNG MÌNH CÓ GIÁNG SINH';
   
   @override
   Widget build(BuildContext context) => MaterialApp(
@@ -29,9 +30,8 @@ class MyApp extends StatelessWidget {
         
      ),
    ),
-    // home: CreateSheetsPage(),
-    home: Present(),
-    // home: AudioPlayerWithLocalAssets(),
+    // home: Present(),
+    home: SplashScreen(),
   );
 }
 
