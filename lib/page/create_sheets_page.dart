@@ -46,29 +46,33 @@ class CreateSheetsPage extends StatelessWidget {
                   ),
                   child: Container(
                     decoration: BoxDecoration(color: Colors.white.withOpacity(0.0)),
-                    // child: SingleChildScrollView(
-                    child: UserFormWidget(
-                      onSavedUser: (user) async {
-                        final id = await UserSheetApi.getRowCount() + 1;
-                        final newUser = user.copy(id: id);
+                    child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        UserFormWidget(
+                          onSavedUser: (user) async {
+                            final id = await UserSheetApi.getRowCount() + 1;
+                            final newUser = user.copy(id: id);
 
-                        await UserSheetApi.insert([newUser.toJson()]);
+                            await UserSheetApi.insert([newUser.toJson()]);
 
-                        final snackBar = SnackBar(
-                          width: 400,
-                          // padding: const EdgeInsets.symmetric(
-                          //   horizontal: 30,
-                          // ),
-                          behavior: SnackBarBehavior.floating,
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                          content: Text('Bạn đã đăng ký thành công',textAlign: TextAlign.center, style: GoogleFonts.playfairDisplay()),
-                          backgroundColor: Colors.purple,
+                            final snackBar = SnackBar(
+                              width: 400,
+                              // padding: const EdgeInsets.symmetric(
+                              //   horizontal: 30,
+                              // ),
+                              behavior: SnackBarBehavior.floating,
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                              content: Text('Bạn đã đăng ký thành công',textAlign: TextAlign.center, style: GoogleFonts.playfairDisplay()),
+                              backgroundColor: Colors.purple,
 
-                        );
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      },
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          },
+                        ),
+                      ],
                     ),
-                    // ),
+                    ),
                     alignment: Alignment.center,
                     padding: const EdgeInsets.all(16),
                   ))
