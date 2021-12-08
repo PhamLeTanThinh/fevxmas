@@ -77,7 +77,7 @@ class _PresentState extends State<Present> {
         builder: (context) => Container(
           decoration: BoxDecoration(
               image: DecorationImage(
-            image: AssetImage('/xmas.jpg'),
+            image: AssetImage('assets/xmas.jpg'),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(0.6),

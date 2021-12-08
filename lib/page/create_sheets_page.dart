@@ -32,7 +32,7 @@ class CreateSheetsPage extends StatelessWidget {
           builder: (context) => Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                image: AssetImage('/xmas2.jpg'),
+                image: AssetImage('assets/xmas2.jpg'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.6),

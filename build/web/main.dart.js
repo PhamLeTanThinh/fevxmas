@@ -38023,7 +38023,7 @@ A.oh.prototype={
 T(a,b){var s=null,r=A.l6("\u0110\xd3N GI\xc1NG SINH C\xd9NG NH\xc0 V\xca",s,s,s,A.E6(s,s,B.aE),s,s)
 return A.ak8(A.ai_(!0,A.eC(s,s,s,new A.dG(s,s,s,s,s,new A.kv(B.bj,B.fI,B.aM,A.b([this.c,this.d],t.t_),s,s),B.a0),s,s,s,s),r),B.ak,new A.iM(new A.SE(),s))}}
 A.SE.prototype={
-$1(a){var s=null,r=A.ait(new A.lR(A.ar(153,0,0,0),B.dG),B.h0,new A.nT("/xmas2.jpg")),q=A.auA(10,10)
+$1(a){var s=null,r=A.ait(new A.lR(A.ar(153,0,0,0),B.dG),B.h0,new A.nT("assets/xmas2.jpg")),q=A.auA(10,10)
 return A.eC(s,A.at5(A.eC(B.R,new A.xs(new A.SD(a),s),s,new A.dG(A.ar(0,255,255,255),s,s,s,s,s,B.a0),s,s,B.BU,s),q),s,new A.dG(s,r,s,s,s,s,B.a0),s,s,s,s)},
 $S:105}
 A.SD.prototype={
@@ -38079,7 +38079,7 @@ A.a8H.prototype={
 $0(){},
 $S:0}
 A.a8G.prototype={
-$1(a){var s=null,r=A.ait(new A.lR(A.ar(153,0,0,0),B.dG),B.h0,new A.nT("/xmas.jpg")),q=A.ar(0,158,158,158),p=this.a,o=p.y?A.aef(B.Cd,B.k):A.aef(B.Cf,B.k),n=t.p
+$1(a){var s=null,r=A.ait(new A.lR(A.ar(153,0,0,0),B.dG),B.h0,new A.nT("assets/xmas.jpg")),q=A.ar(0,158,158,158),p=this.a,o=p.y?A.aef(B.Cd,B.k):A.aef(B.Cf,B.k),n=t.p
 return A.eC(s,A.S2(new A.fs(B.BT,A.adB(A.b([A.eC(B.R,A.adB(A.b([A.WK(s,o,50,new A.a8E(p),s)],n),B.i4,B.eG),q,s,s,s,s,s),B.IN,new A.Fs(new A.a8F(a),s,A.adR(s,s,s,s,s,s,s,s,s,s,new A.aM(20,20,20,20),B.k,s,s,s,s,s,s,s),B.I,s,!1,A.l6("V\xe0o \u0111\xe2y \u0110\u0103ng K\xfd nha",s,s,s,A.E6(B.q,20,s),s,s),s)],n),B.i4,B.eG),s),s,s),s,new A.dG(s,r,s,s,s,s,B.a0),s,s,s,s)},
 $S:105}
 A.a8E.prototype={
